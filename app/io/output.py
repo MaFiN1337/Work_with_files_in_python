@@ -52,5 +52,3 @@ def write_to_file(file_name, info):
         else:
             f.write(info)
     return None
-
-write_to_file("../../interesting_info_to_read", ["This will be my first line", "And this will be second"])

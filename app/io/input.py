@@ -30,5 +30,3 @@ def read_from_file(file_name):
 
 def read_with_pandas():
     pass
-
-print(read_from_file("../../interesting_info_to_read"))

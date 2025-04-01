@@ -1,7 +1,8 @@
-
+from .app.io.input import *
+from .app.io.output import *
 
 def main():
-    pass
+
 
 
 if __name__ == '__main__':
