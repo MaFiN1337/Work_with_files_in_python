@@ -1,3 +1,5 @@
+import pandas as pd
+
 def input_func():
     """
     Returns:
@@ -28,5 +30,20 @@ def read_from_file(file_name):
         result = f.readlines()
     return result
 
-def read_with_pandas():
-    pass
+def read_with_pandas(file_name):
+    """
+    Args:
+        file_name(str): name of the file to read
+    Returns:
+        list[str]: list of strings representing the lines of the file
+    Raises:
+        FileNotFoundError: if the file does not exist or the path is entered incorrectly
+        ValueError: if the file format is not .txt
+    Examples:
+        >>> print(read_with_pandas("csv_file.csv"))
+        ValueError
+    """
+    if file_name.endswith(".txt"):
+        df = pd.read_csv(file_name, header=None)
+        return df[0].astype(str).tolist()
+    raise ValueError("Unsupported file format")
