@@ -27,7 +27,7 @@ def read_from_file(file_name):
     """
 
     with open(file_name, "r") as f:
-        result = f.readlines()
+        result = [line.strip() for line in f]
     return result
 
 def read_with_pandas(file_name):
@@ -40,7 +40,7 @@ def read_with_pandas(file_name):
         FileNotFoundError: if the file does not exist or the path is entered incorrectly
         ValueError: if the file format is not .txt
     Examples:
-        >>> print(read_with_pandas("csv_file.csv"))
+    /   >>> print(read_with_pandas("csv_file.csv"))
         ValueError
     """
     if file_name.endswith(".txt"):
